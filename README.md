@@ -1,4 +1,4 @@
-# Map Tile Server + example implementation PWA Monorepo
+# Map Tile Server + Example PWA Monorepo
 
 This project uses npm workspaces to manage multiple related projects in a single repository.
 
@@ -16,10 +16,9 @@ VITE_BASE_FRONTEND_URL=http://localhost:9200/
 VITE_TILE_SERVER_URL=https://tiles.yourdomain.com/
 ```
 ### To start the app:
-`npm i` in the root folder
-`cd frontend`
-`npm run dev-pwa`
-
+```npm i``` in the root folder
+```cd frontend```
+```npm run dev-pwa```
 
 # Server Setup - two steps
 
@@ -28,7 +27,7 @@ VITE_TILE_SERVER_URL=https://tiles.yourdomain.com/
 #######################################################
 We use a Hetzner server with the following cloud config on creation:
 
-# 1. Create server with cloud config
+### 1. Create server with cloud config
 ```
 #cloud-config
 users:
@@ -83,7 +82,7 @@ Then `ssh-keygen -f "/home/dev/.ssh/known_hosts" -R "serverIP"` make sure to r
 **Set a password**
 `sudo passwd yourusername`
 
-# 2. Run Ansible harding playbook
+### 2. Run Ansible harding playbook
 
 We use [Ansible](https://www.ansible.com/)  to run pre-configured settings for the OS/Kernal and SSH.
 
@@ -210,7 +209,7 @@ You'll ssh into the server now with `ssh yourusername@server.ip.address -p 2222
 
 
 
-# 3. Setup Firewall
+### 3. Setup Firewall
 ```
 sudo ufw default allow outgoing 
 sudo ufw allow 2222/tcp comment 'SSH'
@@ -224,7 +223,7 @@ Check it:
 sudo ufw status verbose
 ```
 
-# 4. Setup Fail2Ban
+### 4. Setup Fail2Ban
 https://github.com/fail2ban/fail2ban
 
 Make sure it is installed:
@@ -285,7 +284,7 @@ sudo fail2ban-client status sshd
 ```
 
 #######################################################
-## Step 2. Setup tile server
+## Step 2. Setup tile server - two options
 #######################################################
 # 1. Download the pmtiles file (Option 1 protomaps)
 https://docs.protomaps.com/basemaps/downloads
@@ -313,7 +312,7 @@ wget -c https://build.protomaps.com/20251117.pmtiles -O planet.pmtiles
 ```
 
 # 1. Build tiles with OpenStreetMap data (Option 2)
-**This is what we went with.**
+**This is what I went with.**
 
 **Overview:**
 Tiles are OSM data organized in OpenMapTiles format. Since we use MapLibre - we use the [MapLibre Style Specification](https://maplibre.org/maplibre-style-spec/).
@@ -326,6 +325,7 @@ Tiles are OSM data organized in OpenMapTiles format. Since we use MapLibre - we 
 **Note about styling:**
 Styling: Use Maputnik (https://maputnik.github.io/editor/) to visually design 
 map styles, then export as style.json for use in your app.
+You're also going to need the Fonts and Sprites used by the map style/tiles.
 
 We rented a powerful Hetzner server for the download and build. It took ~10 hours.
 
@@ -376,12 +376,12 @@ If the session is stuck or you want to remove it from outside:
 screen -S planetiler -X quit
 ```
 
-**To move the .pmtiles file to the tile server**
+**To move the .pmtiles file from the build server to the tile server**
 You can either:
 1. transfer from VPS to VPS  
 2. transfer to home pc then from home pc to the tile server.
 
-We went with option 2.
+I went with option 2.
 
 **Transfer file from temp build server to home pc**
 ```
