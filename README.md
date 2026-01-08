@@ -8,7 +8,7 @@ This project uses npm workspaces to manage multiple related projects in a single
 # To start the project:
 
 ## Add a .env file to /frontend with the following properties:
-**You'll need your Maptiler/Mapbox api keys for satllite imagery.**
+**You'll need your Maptiler/Mapbox api keys if you want satllite imagery.**
 ```
 VITE_MAPLIER_API_KEY=your_api_key
 VITE_MAPBOX_API_KEY=your_api_key
