@@ -1,0 +1,64 @@
+
+// LIGHT MODE - Brand Colors (Quasar accessible)
+// ==================================================
+$primary: #92400e;          
+$secondary: #d97706;        
+$accent: #fbbf24;           
+$dark: #1c1917;             
+$dark-page: #292524;        
+
+// Semantic colors
+$positive: #16a34a;         
+$negative: #dc2626;         
+$info: #0369a1;             
+$warning: #d97706;          
+
+// DARK MODE - Neon Brand Colors
+// ==================================================
+$primary-dark: #fbbf24;     
+$secondary-dark: #f59e0b;   
+$accent-dark: #fde047;      
+$positive-dark: #22c55e;    
+$negative-dark: #ef4444;    
+$info-dark: #3b82f6;        
+$warning-dark: #fb923c;     
+
+// CUSTOM UTILITY COLORS (not Quasar defaults)
+// ==================================================
+// Light backgrounds & surfaces
+$surface-cream: #fef3c7;    // Logo cream - cards, panels
+$background-cream: #fefce8; // Page backgrounds
+
+// Dark mode surfaces
+$surface-dark: $dark;     // Dark cards/panels
+$background-dark: $dark-page;  // Dark page background
+
+// CSS Custom Properties for Theme Switching
+:root {
+    --q-primary: #{$primary};
+    --q-secondary: #{$secondary};
+    --q-accent: #{$accent};
+    --q-positive: #{$positive};
+    --q-negative: #{$negative};
+    --q-info: #{$info};
+    --q-warning: #{$warning};
+
+    // Custom colors - Light Mode
+    --surface: #{$surface-cream};
+    --background: #{$background-cream};
+    
+}
+
+body.body--dark {
+    --q-primary: #{$primary-dark};
+    --q-secondary: #{$secondary-dark};
+    --q-accent: #{$accent-dark};
+    --q-positive: #{$positive-dark};
+    --q-negative: #{$negative-dark};
+    --q-info: #{$info-dark};
+    --q-warning: #{$warning-dark};
+
+    // Custom colors - Dark Mode
+    --surface: #{$surface-dark};
+    --background: #{$background-dark}; 
+}

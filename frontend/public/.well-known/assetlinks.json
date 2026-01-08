@@ -1,0 +1,4 @@
+[
+    "Once you bundle this for a PWA you'll add the assetlinks data here. pwabuilder.com is great for this - it will generate your assetlinks.json",
+    "If you wish to put the PWA on the Play Store then you'll need to verify your domain then add their hash (TWA) to this file"
+]

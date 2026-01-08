@@ -1,0 +1,15 @@
+/* app global css */
+@import 'quasar.variables.scss';
+
+// Prevent pull-down refresh (browser) on mobile devices
+html, body {
+    overscroll-behavior: none;
+}
+
+// Only used for QNotify progress bar
+.pwa-pbar {
+    background: #fef3c7;
+    height: 3.5px;
+    padding-top: 2px;
+    opacity: .95 !important;
+}

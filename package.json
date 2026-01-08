@@ -1,0 +1,11 @@
+{
+    "name": "maptileserverapp",
+    "version": "1.0.0",
+    "description": "POC for an offline first map app using own tile server",
+    "workspaces": [
+        "frontend"
+    ],
+    "keywords": [],
+    "author": "Matthew Spence",
+    "license": "ISC"
+}
