@@ -1,4 +1,4 @@
-# MapTileServe - Monorepo
+# Map Tile Server + example implementation PWA Monorepo
 
 This project uses npm workspaces to manage multiple related projects in a single repository.
 
@@ -7,7 +7,7 @@ This project uses npm workspaces to manage multiple related projects in a single
 
 # To start the project:
 
-## Add .env file to /frontent with the following properties:
+## Add a .env file to /frontend with the following properties:
 **You'll need your Maptiler/Mapbox api keys for satllite imagery.**
 ```
 VITE_MAPLIER_API_KEY=your_api_key
@@ -15,17 +15,16 @@ VITE_MAPBOX_API_KEY=your_api_key
 VITE_BASE_FRONTEND_URL=http://localhost:9200/
 VITE_TILE_SERVER_URL=https://tiles.yourdomain.com/
 ```
+### To start the app:
 `npm i` in the root folder
 `cd frontend`
 `npm run dev-pwa`
 
 
-
-
 # Server Setup - two steps
 
 #######################################################
-## Step 1. Initial setup and hardning (optional just an example of how I like to do itl)
+## Step 1. Initial setup and hardning (optional just an example of how I like to setup a hetzner VPS)
 #######################################################
 We use a Hetzner server with the following cloud config on creation:
 
@@ -39,7 +38,7 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD: ALL']
     lock_passwd: false
     ssh_authorized_keys:
-      - ssh-rsa .....
+      - ssh-rsa Your public key
 
 # Update and upgrade packages
 package_update: true
@@ -284,8 +283,6 @@ Check individual jails:
 ```
 sudo fail2ban-client status sshd
 ```
-
-
 
 #######################################################
 ## Step 2. Setup tile server
