@@ -9,7 +9,7 @@
                 <q-item style="background: var(--surface);">
                     <q-item-section :side="miniState" class="full-width q-py-xs">
                         <div align="center" class="full-width q-pb-xs">
-                            <SvgIcon :src="!miniState ? 'svgs/hmm-logo.svg' : 'svgs/hmm-logo-round.svg'" type="primary"
+                            <SvgIcon src="svgs/hmm-logo.svg" type="primary"
                                 :height="miniState && $q.screen.gt.sm ? 26 : 72"
                                 :width="miniState && $q.screen.gt.sm ? 26 : 72" />
                         </div>
@@ -137,7 +137,7 @@
             <q-card class="q-pa-sm">
                 <div class="row justify-center items-center full-width" style="position: relative;">
                     <SvgIcon
-                        src="svgs/hmm-logo-round.svg"
+                        src="svgs/hmm-logo.svg"
                         size="xl"
                         type="primary"
                     />
