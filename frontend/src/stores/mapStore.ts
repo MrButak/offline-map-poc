@@ -17,7 +17,7 @@ export const DEFAULT_MAP_CONFIG: MapConfig = {
 const BASE_URL = import.meta.env.VITE_BASE_FRONTEND_URL;
 const MAPTILER_API_KEY = import.meta.env.VITE_MAPLIER_API_KEY;
 const MAPBOX_API_KEY = import.meta.env.VITE_MAPBOX_API_KEY;
-const TILE_SERVER_URL = import.meta.env.VITE_MAPBOX_API_KEY;
+const TILE_SERVER_URL = import.meta.env.VITE_TILE_SERVER_URL;
 
 
 let mapStyleDay: any = null;
