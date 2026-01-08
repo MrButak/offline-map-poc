@@ -428,9 +428,9 @@ sudo setcap cap_net_bind_service=+ep /usr/bin/caddy
 caddy version
 ```
 
-# 3. Configure Caddy to server the tiles from a domain
+# 3. Configure Caddy server to serve the tiles from a domain (subdomain in this example)
 **Add a DNS A record to a domain/subdomain**
-We currently use tiles.yourtiledomain.com. The A record host is tiles and the value is the server ip.
+We currently use tiles.yourtiledomain.com. The A record host is tiles and the value is the tile server ip.
 
 **Create caddy dir and Caddyfile**
 Since we build Caddy ourselves there will be no default /etc/caddy/Caddyfile like you would normally get from a regular Caddy installation.
@@ -549,7 +549,7 @@ So for MapLibre, your tile URL will be:
 }
 
 tiles.yourtiledomain.com {
-    @origin1 header Origin https://youapp.com
+    @origin1 header Origin https://yourapp.com
     @local   header Origin http://localhost:9200
 
     header @origin1 Access-Control-Allow-Origin "https://yourapp.com"
